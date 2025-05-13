@@ -128,7 +128,11 @@ class RecipeCard extends HTMLElement {
 		//           literals (template strings) and element.innerHTML for this.
 		// 			 Do NOT include the <article> tags within the innerHTML of the element you create.
 		//           Remember to replace all the placeholders in the template with the data passed in.
-		//           i.e. imgSrc, titleLnk, etc
+		//           i.e. imgSrc, titleLnk, 
+		const roundedRating = Math.round(data.rating);
+		const starImgSrc = `/assets/images/icons/${roundedRating}-star.svg`;
+		const starImgAlt = `${roundedRating} star${roundedRating === 1 ? '' : 's'}`;
+
 		articleSelect.innerHTML = `
 		<img src="${data.imgSrc}"
 			alt="${data.imgAlt}">
@@ -138,8 +142,8 @@ class RecipeCard extends HTMLElement {
 		<p class="organization">${data.organization}</p>
 		<div class="rating">
 			<span>${data.rating}</span>
-			<img src="/assets/images/icons/5-star.svg" alt="5 stars">
-			<span>${data.numRatings}</span>
+			<img src="${starImgSrc}" alt="${starImgAlt}">
+			<span>(${data.numRatings})</span>
 		</div>
 		<time>${data.lengthTime}</time>
 		<p class="ingredients">
