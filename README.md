@@ -3,4 +3,5 @@ Link to website: https://vincent-the-swimmer.github.io/Lab6_Starter/
 
 Names:
 Vincent Gao
+<br>
 Kian Maher
